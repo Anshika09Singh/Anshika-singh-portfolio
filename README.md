@@ -1,12 +1,37 @@
-# React + Vite
+# 🌸 Anshika Singh – Portfolio Website  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+✨ Welcome to the repository of my personal portfolio website!  
+This site is a **creative showcase** of my skills, projects, and journey as an **AI/ML enthusiast & Web Developer**.  
 
-Currently, two official plugins are available:
+🌐 **Live Website:** [anshika-singh-portfolio.onrender.com](https://anshika-singh-portfolio.onrender.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🎨 Features
+- 🖥️ Responsive and modern UI (React + TailwindCSS)  
+- ⚡ Smooth animations and transitions  
+- 📂 Showcasing projects, achievements, and skills  
+- 🌐 Deployed live using **Render**  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** React.js, Tailwind CSS, JavaScript  
+- **Design:** Responsive layouts, animations  
+- **Deployment:** Render  
+
+---
+
+## 🚀 How to Run Locally
+```bash
+# Clone the repository
+git clone https://github.com/123anshi/anshika-singh-portfolio.git
+
+# Go inside the folder
+cd anshika-singh-portfolio
+
+# Install dependencies
+npm install
+
+# Run locally
+npm start
