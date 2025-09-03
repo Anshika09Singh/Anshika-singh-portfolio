@@ -29,7 +29,7 @@ const projects = [
     github: "https://github.com/Anshika09Singh/PitchWhiz",
     liveDemo: "https://github.com/Anshika09Singh/PitchWhiz",
     image:
-      "https://camo.githubusercontent.com/6f09d025a63b2041e719938ac08f7426c161bfd1efa361ae396702fd35225234/68747470733a2f2f77616c70617065726163636573732e636f6d2f66756c6c2f313437383138312e6a7067",
+      "https://cdn.arstechnica.net/wp-content/uploads/2018/04/GmailLaunch-03.max-1000x1000-760x380.png",
   },
   {
     title: "NeuroFit Brain Training Hub",
