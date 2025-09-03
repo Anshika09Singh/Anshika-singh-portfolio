@@ -28,8 +28,7 @@ const projects = [
     techStack: ["Gemini API", "Airtable", "Classification", "Python", "Flask"],
     github: "https://github.com/Anshika09Singh/PitchWhiz",
     liveDemo: "https://github.com/Anshika09Singh/PitchWhiz",
-    image:
-      "https://cdn.arstechnica.net/wp-content/uploads/2018/04/GmailLaunch-03.max-1000x1000-760x380.png",
+    image: "https://cdn.arstechnica.net/wp-content/uploads/2018/04/GmailLaunch-03.max-1000x1000-760x380.png",
   },
   {
     title: "NeuroFit Brain Training Hub",
