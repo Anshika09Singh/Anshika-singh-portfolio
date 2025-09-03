@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import jovianImage from "../assets/image.png"; // ✅ Local image import
+import jovianImage from "../public/image.png"; // ✅ Local image import
 
 const projects = [
   {
