@@ -1,82 +1,107 @@
-import React, { useEffect, useState } from 'react';
-
-// This component displays a grid of personal projects with a clean, light design,
-// animations, and hover effects. It is fully responsive and production-ready.
-// External dependencies have been replaced with inline SVGs for self-contained use.
+import React, { useEffect, useState } from "react";
+import jovianImage from "../assets/image.png"; // ✅ Local image import
 
 const projects = [
   {
-    title: 'Diabetes Care with AI',
-    description: 'An ML-powered diabetes prediction system with a Gemini API chatbot, lifestyle suggestions, and visual health insights.',
-    techStack: ['ML', 'AI', 'Gemini API', 'Chatbot', 'HTML', 'Tailwindcss','javascript','Flask'],
-    liveDemo: 'https://diabetes-care-with-ai-5-nd7x.onrender.com/',
-    github: 'https://github.com/Anshika09Singh/Diabetes-care-with-AI',
-    image: 'https://diabetes-care-with-ai-5-nd7x.onrender.com/static/doctor.png',
+    title: "Diabetes Care with AI",
+    description:
+      "An ML-powered diabetes prediction system with a Gemini API chatbot, lifestyle suggestions, and visual health insights.",
+    techStack: [
+      "ML",
+      "AI",
+      "Gemini API",
+      "Chatbot",
+      "HTML",
+      "Tailwindcss",
+      "JavaScript",
+      "Flask",
+    ],
+    liveDemo: "https://diabetes-care-with-ai-5-nd7x.onrender.com/",
+    github: "https://github.com/Anshika09Singh/Diabetes-care-with-AI",
+    image:
+      "https://diabetes-care-with-ai-5-nd7x.onrender.com/static/doctor.png",
   },
   {
-    title: 'PitchWhiz (Startup Pitch Classifier)',
-    description: 'A web app to classify startup pitches and generate summaries using the Gemini API and Airtable.',
-    techStack: ['Gemini API', 'Airtable', 'Classification', 'Python', 'Flask'],
-    github: 'https://github.com/Anshika09Singh/PitchWhiz',
-    liveDemo: 'https://github.com/Anshika09Singh/PitchWhiz',
-    image: 'https://camo.githubusercontent.com/6f09d025a63b2041e719938ac08f7426c161bfd1efa361ae396702fd35225234/68747470733a2f2f77616c6c70617065726163636573732e636f6d2f66756c6c2f313437383138312e6a7067',
+    title: "PitchWhiz (Startup Pitch Classifier)",
+    description:
+      "A web app to classify startup pitches and generate summaries using the Gemini API and Airtable.",
+    techStack: ["Gemini API", "Airtable", "Classification", "Python", "Flask"],
+    github: "https://github.com/Anshika09Singh/PitchWhiz",
+    liveDemo: "https://github.com/Anshika09Singh/PitchWhiz",
+    image:
+      "https://camo.githubusercontent.com/6f09d025a63b2041e719938ac08f7426c161bfd1efa361ae396702fd35225234/68747470733a2f2f77616c70617065726163636573732e636f6d2f66756c6c2f313437383138312e6a7067",
   },
   {
-    title: 'NeuroFit Brain Training Hub',
-    description: 'A gamified cognitive platform with React.js and Node.js for real-time user progress feedback and tracking.',
-    techStack: ['React.js', 'Node.js', 'Gamification', 'Express.js'],
-    liveDemo: 'https://neurofit-1f.onrender.com/',
-    github: 'https://github.com/Anshika09Singh/NeuroFit',
-    image: 'https://neurofit-1f.onrender.com/neuro.jpg',
+    title: "NeuroFit Brain Training Hub",
+    description:
+      "A gamified cognitive platform with React.js and Node.js for real-time user progress feedback and tracking.",
+    techStack: ["React.js", "Node.js", "Gamification", "Express.js"],
+    liveDemo: "https://neurofit-1f.onrender.com/",
+    github: "https://github.com/Anshika09Singh/NeuroFit",
+    image: "https://neurofit-1f.onrender.com/neuro.jpg",
   },
   {
-    title: 'Legal System API (Golang)',
-    description: 'A RESTful API for legal case management built using the Gin framework.',
-    techStack: ['Golang', 'Gin', 'API', 'REST', 'MYSQL'],
-    github: 'https://github.com/Anshika09Singh/Legal-System',
-    liveDemo: 'https://github.com/Anshika09Singh/Legal-System',
-    image: 'https://media.istockphoto.com/id/812945070/vector/modern-legal-system-round-line-concept.jpg?s=1024x1024&w=is&k=20&c=gMWU07T7jobP-zrtN0frJn2lYqIsZcZMsuQR4JTIcWc=',
+    title: "Legal System API (Golang)",
+    description:
+      "A RESTful API for legal case management built using the Gin framework.",
+    techStack: ["Golang", "Gin", "API", "REST", "MYSQL"],
+    github: "https://github.com/Anshika09Singh/Legal-System",
+    liveDemo: "https://github.com/Anshika09Singh/Legal-System",
+    image:
+      "https://media.istockphoto.com/id/812945070/vector/modern-legal-system-round-line-concept.jpg?s=1024x1024&w=is&k=20&c=gMWU07T7jobP-zrtN0frJn2lYqIsZcZMsuQR4JTIcWc=",
   },
   {
-    title: 'Jovian Career Portal',
-    description: 'A responsive job platform built with HTML, CSS, JS, Tailwind CSS, Flask, and Firebase. Features job filters and applicant tracking.',
-    techStack: ['Flask', 'HTML', 'CSS', 'Firebase', 'Tailwind CSS'],
-    github: 'https://github.com/Anshika09Singh/jovian-careers-website',
-    liveDemo: 'https://github.com/Anshika09Singh/jovian-careers-website',
-    image: 'public/image.png',
+    title: "Jovian Career Portal",
+    description:
+      "A responsive job platform built with HTML, CSS, JS, Tailwind CSS, Flask, and Firebase. Features job filters and applicant tracking.",
+    techStack: ["Flask", "HTML", "CSS", "Firebase", "Tailwind CSS"],
+    github: "https://github.com/Anshika09Singh/jovian-careers-website",
+    liveDemo: "https://github.com/Anshika09Singh/jovian-careers-website",
+    image: jovianImage, // ✅ fixed
   },
   {
-    title: 'Ai-crop-disease-detection-agent',
-    description: 'AI Crop Doctor is an AI-powered web application that helps farmers, gardeners, and agricultural experts identify plant diseases from leaf images. By combining machine learning image analysis with context-based follow-up questions, it delivers accurate diagnoses and practical treatment suggestions.',
-    techStack: ['Python', 'Flask 3.1.0', 'Flask-CORS 6.0.1', 'TensorFlow 2.19.0', 'NumPy 1.26.4', 'Pillow 10.3.0', 'Google Generative AI 0.8.5', 'Firebase Admin 7.0.0', 'Google Cloud Storage',  ],
-     github: 'https://github.com/aayush-1709/ai-crop-disease-detection-agent',
-    liveDemo: 'https://ai-crop-doctor-app.onrender.com/',
-    image: 'https://media.istockphoto.com/id/1496224767/vector/vector-cute-farmer-robot-cartoon-illustration-isolated.jpg?s=1024x1024&w=is&k=20&c=Q96xOCkdNNc8-NwUVzO1Ka0CSxIfKxv7z5rKch2rAuo=',
-  },
-  
-  {
-    title: 'Ai-summarizer',
-    description: 'A Flask-based web application that provides intelligent text summarization using state-of-the-art NLP models. The application supports both text input and document uploads (TXT and DOCX formats), generates concise summaries, extracts key entities, and provides detailed analytics about the summarization process.',
-    techStack: ['Python', 'Flask', 'HTML , CSS , JS , Tailwindcss'],
-    github: 'https://github.com/Anshika09Singh/ai-summarizer',
-    liveDemo: 'https://github.com/Anshika09Singh/ai-summarizer',
-    image: 'https://ps.w.org/ai-summarizer/assets/banner-1544x500.png?rev=3208629',
-  },
-  {
-    title: 'PM2.5-Forcasting-App',
-    description: 'The Air Quality Forecasting Dashboard is a Machine Learning–powered tool to analyze, visualize, and forecast PM2.5 levels.',
-    techStack: ['React.js', 'Express.js', 'Finance', 'Data Visualization'],
-    liveDemo: 'https://anshika09singh-pm2-5-forcasting-app-app-8c57yz.streamlit.app/',
-    github: 'https://github.com/Anshika09Singh/PM2.5-Forcasting-App',
-    image: 'https://geekflare.com/wp-content/uploads/2022/12/Apps-for-Air-Quality.png',
+    title: "Ai-crop-disease-detection-agent",
+    description:
+      "AI Crop Doctor is an AI-powered web application that helps farmers identify plant diseases from leaf images.",
+    techStack: [
+      "Python",
+      "Flask 3.1.0",
+      "TensorFlow 2.19.0",
+      "Firebase",
+      "Google Cloud Storage",
+    ],
+    github:
+      "https://github.com/aayush-1709/ai-crop-disease-detection-agent",
+    liveDemo: "https://ai-crop-doctor-app.onrender.com/",
+    image:
+      "https://media.istockphoto.com/id/1496224767/vector/vector-cute-farmer-robot-cartoon-illustration-isolated.jpg?s=1024x1024&w=is&k=20&c=Q96xOCkdNNc8-NwUVzO1Ka0CSxIfKxv7z5rKch2rAuo=",
   },
   {
-    title: ' GUI Devcation-2025',
-    description: 'Design the frontend',
-    techStack: ['React.js', 'Tailwind CSS', 'Web Development'],
-    liveDemo: 'https://devcation-2025-one.vercel.app/',
-    github: 'https://github.com/Anshika09Singh/Devcation-2025',
-    image: 'https://placehold.co/600x400/A2D2FF/333?text=Frontend+Site',
+    title: "Ai-summarizer",
+    description:
+      "A Flask-based web application that provides intelligent text summarization with NLP models.",
+    techStack: ["Python", "Flask", "HTML", "CSS", "JS", "Tailwindcss"],
+    github: "https://github.com/Anshika09Singh/ai-summarizer",
+    liveDemo: "https://github.com/Anshika09Singh/ai-summarizer",
+    image: "https://ps.w.org/ai-summarizer/assets/banner-1544x500.png?rev=3208629",
+  },
+  {
+    title: "PM2.5-Forcasting-App",
+    description:
+      "The Air Quality Forecasting Dashboard is a ML-powered tool to analyze, visualize, and forecast PM2.5 levels.",
+    techStack: ["React.js", "Express.js", "Data Visualization"],
+    liveDemo:
+      "https://anshika09singh-pm2-5-forcasting-app-app-8c57yz.streamlit.app/",
+    github: "https://github.com/Anshika09Singh/PM2.5-Forcasting-App",
+    image: "https://geekflare.com/wp-content/uploads/2022/12/Apps-for-Air-Quality.png",
+  },
+  {
+    title: "GUI Devcation-2025",
+    description: "Design the frontend",
+    techStack: ["React.js", "Tailwind CSS", "Web Development"],
+    liveDemo: "https://devcation-2025-one.vercel.app/",
+    github: "https://github.com/Anshika09Singh/Devcation-2025",
+    image: "https://placehold.co/600x400/A2D2FF/333?text=Frontend+Site",
   },
 ];
 
@@ -87,54 +112,55 @@ const Projects = () => {
     setInView(true);
   }, []);
 
-  // GitHub icon as an SVG to avoid external dependencies
   const GithubIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-github">
-      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 17 2.19A10.23 10.23 0 0 0 12 5.68a10.23 10.23 0 0 0-5-.49c-1.73-1.54-2.91-1.19-2.91-1.19S4.01 4.77 4 4.77A5.44 5.44 0 0 0 2 10.75c0 5.46 3.3 6.64 6.44 7A3.37 3.37 0 0 0 9 19.13V22"></path>
+    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.6-1.6 2.6-2.1.5-.2 1-.4 1.5-.4.5 0 1 .1 1.5.4 2 .5 1.6 2.2 2.6 2.1 0 0 .6-1 1.7-1.1 0 0 1.1 0 .1.7 0 0-.8.4-1.2 1.6 0 0-.7 2.1-3.9 1.4v2.2c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.65 18.35.5 12 .5z" />
     </svg>
   );
 
-  // Link icon as an SVG to avoid external dependencies
   const LinkIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-external-link">
-      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-      <polyline points="15 3 21 3 21 9"></polyline>
-      <line x1="10" y1="14" x2="21" y2="3"></line>
+    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+      <polyline points="15 3 21 3 21 9" />
+      <line x1="10" y1="14" x2="21" y2="3" />
     </svg>
   );
 
   return (
-    <section id="projects" className="py-16 sm:py-20 bg-gradient-to-br from-indigo-50 to-purple-50 text-gray-900 font-sans">
+    <section id="projects" className="py-16 bg-gradient-to-br from-indigo-50 to-purple-50">
       <div className="container mx-auto px-6 max-w-7xl">
-        {/* Section heading with a decorative underline */}
         <div className="flex flex-col items-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 text-center mb-2">
+          <h2 className="text-4xl font-extrabold text-gray-900 text-center mb-2">
             My Projects
           </h2>
           <span className="h-1 w-24 bg-purple-600 rounded-full"></span>
         </div>
 
-        {/* Projects grid with responsive columns */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl p-6 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl opacity-0 ${inView ? 'animate-fade-in-up' : ''}`}
+              className={`bg-white/70 rounded-3xl shadow-xl p-6 transition-all hover:scale-105 hover:shadow-2xl opacity-0 ${
+                inView ? "animate-fade-in-up" : ""
+              }`}
               style={{ animationDelay: `${0.1 * index}s` }}
             >
               {project.image && (
-                <div className="mb-4 rounded-xl overflow-hidden shadow-md">
+                <div className="mb-4 rounded-xl overflow-hidden shadow-md h-48">
                   <img
                     src={project.image}
-                    alt={`Illustration for ${project.title}`}
-                    className="w-full h-auto object-cover"
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) =>
+                      (e.target.src = "https://placehold.co/600x400?text=No+Image")
+                    }
                   />
                 </div>
               )}
-              <h3 className="text-2xl font-bold mb-2 text-gray-800">{project.title}</h3>
+
+              <h3 className="text-xl font-bold mb-2 text-gray-800">{project.title}</h3>
               <p className="text-gray-600 mb-4">{project.description}</p>
 
-              {/* Tech stack tags */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.techStack.map((tech, i) => (
                   <span
@@ -146,14 +172,13 @@ const Projects = () => {
                 ))}
               </div>
 
-              {/* Links section with icons */}
               <div className="flex gap-4">
                 {project.github && (
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-purple-600 hover:text-purple-800 transition-colors duration-300 font-medium"
+                    className="flex items-center gap-1 text-purple-600 hover:text-purple-800 font-medium"
                   >
                     <GithubIcon /> GitHub
                   </a>
@@ -163,9 +188,9 @@ const Projects = () => {
                     href={project.liveDemo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-purple-600 hover:text-purple-800 transition-colors duration-300 font-medium"
+                    className="flex items-center gap-1 text-purple-600 hover:text-purple-800 font-medium"
                   >
-                    <LinkIcon /> Live Demo
+                    <LinkIcon /> Live
                   </a>
                 )}
               </div>
@@ -173,7 +198,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
-      {/* Tailwind CSS keyframes for fade-in animation */}
+
       <style>
         {`
           @keyframes fade-in-up {
@@ -181,7 +206,7 @@ const Projects = () => {
             to { opacity: 1; transform: translateY(0); }
           }
           .animate-fade-in-up {
-            animation: fade-in-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            animation: fade-in-up 0.8s ease-out forwards;
           }
         `}
       </style>
