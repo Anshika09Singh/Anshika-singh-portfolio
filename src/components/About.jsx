@@ -153,13 +153,14 @@ const About = () => {
             <FaLinkedin /> LinkedIn
           </a>
           <a
-            href="https://www.naukri.com/code360/profile/949637a7-0c6d-4028-bcd4-9f1b9fbbc93d"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
-          >
-            <SiCodingninjas /> Coding 360
-          </a>
+  href="https://www.naukri.com/code360/profile/949637a7-0c6d-4028-bcd4-9f1b9fbbc93d"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+>
+  <SiCodingninjas /> Coding 360
+</a>
+
         </div>
       </div>
 
