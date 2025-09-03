@@ -23,9 +23,9 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex justify-center gap-6">
           {[
-            { icon: <FaGithub />, link: "https://github.com/123anshi" },
-            { icon: <FaLinkedin />, link: "https://linkedin.com/in/your-linkedin" },
-            { icon: <FaInstagram />, link: "https://instagram.com/your-instagram" },
+            { icon: <FaGithub />, link: "https://github.com/Anshika09Singh" },
+            { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/anshika-singh-031b132a5/" },
+            
           ].map((social, index) => (
             <a
               key={index}
