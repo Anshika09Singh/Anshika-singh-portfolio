@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import jovianImage from "../public/image.png"; // ✅ Local image import
+
 
 const projects = [
   {
@@ -57,7 +57,7 @@ const projects = [
     techStack: ["Flask", "HTML", "CSS", "Firebase", "Tailwind CSS"],
     github: "https://github.com/Anshika09Singh/jovian-careers-website",
     liveDemo: "https://github.com/Anshika09Singh/jovian-careers-website",
-    image: jovianImage, // ✅ fixed
+    image: "https://host.tatiblockchain.co.za/img/careers-portal-south-africa.jpg", // ✅ fixed
   },
   {
     title: "Ai-crop-disease-detection-agent",
