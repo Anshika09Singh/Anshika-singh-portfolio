@@ -25,7 +25,7 @@ const Footer = () => {
           {[
             { icon: <FaGithub />, link: "https://github.com/Anshika09Singh" },
             { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/anshika-singh-031b132a5/" },
-            
+            { icon: <FaInstagram />, link: "https://www.instagram.com/your_instagram_username" }, // ✅ add your Instagram handle here
           ].map((social, index) => (
             <a
               key={index}
